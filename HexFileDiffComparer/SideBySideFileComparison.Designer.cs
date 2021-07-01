@@ -58,9 +58,13 @@ namespace HexFileDiffComparer
             this.WriteValueButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.ultraTabbedMdiManager1 = new Infragistics.Win.UltraWinTabbedMdi.UltraTabbedMdiManager(this.components);
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.knownDataPointsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.MainFileGroupBox.SuspendLayout();
             this.SecondaryFileGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ultraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog
@@ -143,7 +147,8 @@ namespace HexFileDiffComparer
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.viewToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(795, 24);
@@ -278,6 +283,25 @@ namespace HexFileDiffComparer
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
+            // ultraTabbedMdiManager1
+            // 
+            this.ultraTabbedMdiManager1.MdiParent = this;
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.knownDataPointsToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // knownDataPointsToolStripMenuItem
+            // 
+            this.knownDataPointsToolStripMenuItem.Name = "knownDataPointsToolStripMenuItem";
+            this.knownDataPointsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.knownDataPointsToolStripMenuItem.Text = "Known Data Points";
+            this.knownDataPointsToolStripMenuItem.Click += new System.EventHandler(this.knownDataPointsToolStripMenuItem_Click);
+            // 
             // SideBySideFileComparison
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -300,6 +324,7 @@ namespace HexFileDiffComparer
             this.menuStrip1.PerformLayout();
             this.MainFileGroupBox.ResumeLayout(false);
             this.SecondaryFileGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ultraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,6 +359,9 @@ namespace HexFileDiffComparer
         private System.Windows.Forms.Button WriteValueButton;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private Infragistics.Win.UltraWinTabbedMdi.UltraTabbedMdiManager ultraTabbedMdiManager1;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem knownDataPointsToolStripMenuItem;
     }
 }
 

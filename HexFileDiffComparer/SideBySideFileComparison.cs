@@ -18,10 +18,29 @@ namespace HexFileDiffComparer
             InitializeComponent();
             MainFileListView.FullRowSelect = true;
             SecondaryFileListView.FullRowSelect = true;
+            initializeKnownDataPoints();
         }
 
         byte[] leftSideHexArray = new byte[65536];
         byte[] rightSideHexArray = new byte[65536];
+        string[] knownDataPoints = new string[8192];
+
+
+        private void initializeKnownDataPoints()
+        {
+            knownDataPoints[0x2B] = "Number of times saved";
+            knownDataPoints[0x2C] = "File Name Character 1";
+            knownDataPoints[0x2D] = "File Name Character 2";
+            knownDataPoints[0x2E] = "File Name Character 3";
+            knownDataPoints[0x2F] = "File Name Character 4";
+            knownDataPoints[0x30] = "File Name Character 5";
+            knownDataPoints[0x31] = "File Name Character 6";
+            knownDataPoints[0x32] = "File Name Character 7";
+            knownDataPoints[0x33] = "File Name Character 8";
+            knownDataPoints[0x34] = "Unknown save delta. Changes appear random";
+            knownDataPoints[0x100B] = "Unknown save delta. Changes appear random";
+
+        }
 
         private void loadLeftSideFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -70,7 +89,7 @@ namespace HexFileDiffComparer
             SecondaryFileListView.Items.Clear();
             for (int i=0;i<leftSideHexArray.Length;i++)
             {
-                if (leftSideHexArray[i] != rightSideHexArray[i])
+                if (leftSideHexArray[i] != rightSideHexArray[i] && knownDataPoints[i % 8192] == null)
                 {
                     MainFileListView.Items.Add(new ListViewItem(new string[] { i.ToString("X4"), leftSideHexArray[i].ToString("X2"), Convert.ToString(leftSideHexArray[i], 2).PadLeft(8, '0'), leftSideHexArray[i].ToString() }));
                     SecondaryFileListView.Items.Add(new ListViewItem(new string[] { i.ToString("X4"), rightSideHexArray[i].ToString("X2"), Convert.ToString(rightSideHexArray[i], 2).PadLeft(8, '0'), rightSideHexArray[i].ToString() }));
@@ -82,7 +101,7 @@ namespace HexFileDiffComparer
         {
             saveFileDialog.ShowDialog();
             BinaryWriter binaryWriter = new BinaryWriter(File.Open(saveFileDialog.FileName, FileMode.OpenOrCreate));
-            binaryWriter.Write(leftSideHexArray);
+            binaryWriter.Write(renumberByteArray(leftSideHexArray));
             binaryWriter.Close();
         }
 
@@ -163,6 +182,12 @@ namespace HexFileDiffComparer
             {
                 MainFileListView.Items[i].Selected = SecondaryFileListView.Items[i].Selected;
             }
+        }
+
+        private void knownDataPointsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataPointOverviewForm knownDataPointsForm = new DataPointOverviewForm(leftSideHexArray,knownDataPoints);
+            knownDataPointsForm.Show();
         }
     }
 }
