@@ -18,7 +18,13 @@ namespace HexFileDiffComparer
             InitializeComponent();
             MainFileListView.FullRowSelect = true;
             SecondaryFileListView.FullRowSelect = true;
-            initializeKnownDataPoints();
+            if (File.Exists("Temp/TempManifest.csv"))
+                importManifest("Temp/TempManifest.csv");
+            else
+            {
+                initializeKnownDataPoints();
+                exportManifest("Temp/TempManifest.csv");
+            }
         }
 
         byte[] leftSideHexArray = new byte[65536];
@@ -38,8 +44,59 @@ namespace HexFileDiffComparer
             knownDataPoints[0x32] = "File Name Character 7";
             knownDataPoints[0x33] = "File Name Character 8";
             knownDataPoints[0x34] = "Unknown save delta. Changes appear random";
+            knownDataPoints[0xFFB] = "Bomber's Password Digit 1";
+            knownDataPoints[0xFFC] = "Bomber's Password Digit 2";
+            knownDataPoints[0xFFD] = "Bomber's Password Digit 3";
+            knownDataPoints[0xFFE] = "Bomber's Password Digit 4";
+            knownDataPoints[0xFFF] = "Bomber's Password Digit 5";
             knownDataPoints[0x100B] = "Unknown save delta. Changes appear random";
 
+        }
+
+        private void importManifest(string filename)
+        {
+            StreamReader streamReader;
+            try
+            {
+                streamReader = new StreamReader(filename);
+                while (!streamReader.EndOfStream)
+                {
+                    addLineToInteralArray(streamReader.ReadLine());
+                }
+                streamReader.Close();
+            }
+            catch
+            {
+                //error handling
+            }
+        }
+
+        private void addLineToInteralArray(string line)
+        {
+            if (line.Length > 5)
+            {
+                string addressString = line.Substring(0, 4);
+                string descriptionString = line.Substring(5, line.Length - 5);
+                knownDataPoints[int.Parse(addressString)] = descriptionString;
+            }
+        }
+
+        private void exportManifest(string filename)
+        {
+            try
+            {
+                StreamWriter streamWriter = new StreamWriter(filename);
+                for (int i = 0; i < 8192; i++)
+                {
+                    if (knownDataPoints[i] != null)
+                    streamWriter.WriteLine(i.ToString().PadLeft(4, '0') + "," + knownDataPoints[i]);
+                }
+                streamWriter.Close();
+            }
+            catch
+            {
+                //error handling
+            }
         }
 
         private void loadLeftSideFileToolStripMenuItem_Click(object sender, EventArgs e)
@@ -188,6 +245,18 @@ namespace HexFileDiffComparer
         {
             DataPointOverviewForm knownDataPointsForm = new DataPointOverviewForm(leftSideHexArray,knownDataPoints);
             knownDataPointsForm.Show();
+        }
+
+        private void importToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openFileDialog.ShowDialog();
+            importManifest(openFileDialog.FileName);
+        }
+
+        private void exportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFileDialog.ShowDialog();
+            exportManifest(saveFileDialog.FileName);
         }
     }
 }

@@ -61,6 +61,9 @@ namespace HexFileDiffComparer
             this.ultraTabbedMdiManager1 = new Infragistics.Win.UltraWinTabbedMdi.UltraTabbedMdiManager(this.components);
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.knownDataPointsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manifestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.MainFileGroupBox.SuspendLayout();
             this.SecondaryFileGroupBox.SuspendLayout();
@@ -148,7 +151,8 @@ namespace HexFileDiffComparer
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.viewToolStripMenuItem});
+            this.viewToolStripMenuItem,
+            this.manifestToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(795, 24);
@@ -302,6 +306,29 @@ namespace HexFileDiffComparer
             this.knownDataPointsToolStripMenuItem.Text = "Known Data Points";
             this.knownDataPointsToolStripMenuItem.Click += new System.EventHandler(this.knownDataPointsToolStripMenuItem_Click);
             // 
+            // manifestToolStripMenuItem
+            // 
+            this.manifestToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.importToolStripMenuItem,
+            this.exportToolStripMenuItem});
+            this.manifestToolStripMenuItem.Name = "manifestToolStripMenuItem";
+            this.manifestToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.manifestToolStripMenuItem.Text = "Manifest";
+            // 
+            // importToolStripMenuItem
+            // 
+            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.importToolStripMenuItem.Text = "Import";
+            this.importToolStripMenuItem.Click += new System.EventHandler(this.importToolStripMenuItem_Click);
+            // 
+            // exportToolStripMenuItem
+            // 
+            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToolStripMenuItem.Text = "Export";
+            this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
+            // 
             // SideBySideFileComparison
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -362,6 +389,9 @@ namespace HexFileDiffComparer
         private Infragistics.Win.UltraWinTabbedMdi.UltraTabbedMdiManager ultraTabbedMdiManager1;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem knownDataPointsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manifestToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
     }
 }
 

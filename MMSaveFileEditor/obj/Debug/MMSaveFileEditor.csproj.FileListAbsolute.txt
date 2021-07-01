@@ -7,3 +7,4 @@ C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\MMSaveFileEditor\obj\Debug\MMSave
 C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\MMSaveFileEditor\obj\Debug\MMSaveFileEditor.csproj.CoreCompileInputs.cache
 C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\MMSaveFileEditor\obj\Debug\MMSaveFileEditor.exe
 C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\MMSaveFileEditor\obj\Debug\MMSaveFileEditor.pdb
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\MMSaveFileEditor\obj\Debug\MMSaveFileEditor.csprojAssemblyReference.cache
