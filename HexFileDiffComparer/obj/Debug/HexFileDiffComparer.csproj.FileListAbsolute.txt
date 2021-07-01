@@ -1,0 +1,10 @@
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\HexFileDiffComparer\bin\Debug\HexFileDiffComparer.exe.config
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\HexFileDiffComparer\bin\Debug\HexFileDiffComparer.exe
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\HexFileDiffComparer\bin\Debug\HexFileDiffComparer.pdb
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\HexFileDiffComparer\obj\Debug\HexFileDiffComparer.csprojAssemblyReference.cache
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\HexFileDiffComparer\obj\Debug\HexFileDiffComparer.Properties.Resources.resources
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\HexFileDiffComparer\obj\Debug\HexFileDiffComparer.csproj.GenerateResource.cache
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\HexFileDiffComparer\obj\Debug\HexFileDiffComparer.csproj.CoreCompileInputs.cache
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\HexFileDiffComparer\obj\Debug\HexFileDiffComparer.exe
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\HexFileDiffComparer\obj\Debug\HexFileDiffComparer.pdb
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\HexFileDiffComparer\obj\Debug\HexFileDiffComparer.SideBySideFileComparison.resources
