@@ -101,7 +101,7 @@ namespace HexFileDiffComparer
             int address = 0;
             try
             {
-                address = int.Parse(AddressEntry.Text);
+                address = int.Parse(AddressEntry.Text, System.Globalization.NumberStyles.HexNumber);
             }
             catch
             {
