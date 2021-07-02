@@ -30,7 +30,6 @@ namespace HexFileDiffComparer
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.ultraTabbedMdiManager1 = new Infragistics.Win.UltraWinTabbedMdi.UltraTabbedMdiManager(this.components);
             this.MainFileListView = new System.Windows.Forms.ListView();
             this.Address = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Value = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -41,12 +40,7 @@ namespace HexFileDiffComparer
             this.AddressEntry = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.ultraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ultraTabbedMdiManager1
-            // 
-            this.ultraTabbedMdiManager1.MdiParent = this;
             // 
             // MainFileListView
             // 
@@ -143,15 +137,12 @@ namespace HexFileDiffComparer
             this.Controls.Add(this.MainFileListView);
             this.Name = "DataPointOverviewForm";
             this.Text = "Known Data Points";
-            ((System.ComponentModel.ISupportInitialize)(this.ultraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Infragistics.Win.UltraWinTabbedMdi.UltraTabbedMdiManager ultraTabbedMdiManager1;
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.ListView MainFileListView;
         private System.Windows.Forms.ColumnHeader Address;

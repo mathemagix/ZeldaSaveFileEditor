@@ -8,12 +8,5 @@ C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\HexFileDiffComparer\obj\Debug\Hex
 C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\HexFileDiffComparer\obj\Debug\HexFileDiffComparer.exe
 C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\HexFileDiffComparer\obj\Debug\HexFileDiffComparer.pdb
 C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\HexFileDiffComparer\obj\Debug\HexFileDiffComparer.SideBySideFileComparison.resources
-C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\HexFileDiffComparer\bin\Debug\Infragistics4.Shared.v17.1.dll
-C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\HexFileDiffComparer\bin\Debug\Infragistics4.Win.UltraWinTabbedMdi.v17.1.dll
-C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\HexFileDiffComparer\bin\Debug\Infragistics4.Win.v17.1.dll
-C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\HexFileDiffComparer\bin\Debug\Infragistics4.Shared.v17.1.xml
-C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\HexFileDiffComparer\bin\Debug\Infragistics4.Win.UltraWinTabbedMdi.v17.1.xml
-C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\HexFileDiffComparer\bin\Debug\Infragistics4.Win.v17.1.xml
 C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\HexFileDiffComparer\obj\Debug\HexFileDiffComparer.DataPointOverviewForm.resources
 C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\HexFileDiffComparer\obj\Debug\HexFileDiffComparer.exe.licenses
-C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\HexFileDiffComparer\obj\Debug\HexFileDiffComparer.csproj.CopyComplete

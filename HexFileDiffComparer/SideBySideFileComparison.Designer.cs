@@ -58,7 +58,6 @@ namespace HexFileDiffComparer
             this.WriteValueButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.ultraTabbedMdiManager1 = new Infragistics.Win.UltraWinTabbedMdi.UltraTabbedMdiManager(this.components);
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.knownDataPointsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manifestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,7 +66,6 @@ namespace HexFileDiffComparer
             this.menuStrip1.SuspendLayout();
             this.MainFileGroupBox.SuspendLayout();
             this.SecondaryFileGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ultraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog
@@ -287,10 +285,6 @@ namespace HexFileDiffComparer
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
-            // ultraTabbedMdiManager1
-            // 
-            this.ultraTabbedMdiManager1.MdiParent = this;
-            // 
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -351,7 +345,6 @@ namespace HexFileDiffComparer
             this.menuStrip1.PerformLayout();
             this.MainFileGroupBox.ResumeLayout(false);
             this.SecondaryFileGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ultraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,7 +379,6 @@ namespace HexFileDiffComparer
         private System.Windows.Forms.Button WriteValueButton;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private Infragistics.Win.UltraWinTabbedMdi.UltraTabbedMdiManager ultraTabbedMdiManager1;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem knownDataPointsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manifestToolStripMenuItem;
