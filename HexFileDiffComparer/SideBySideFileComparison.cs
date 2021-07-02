@@ -18,6 +18,8 @@ namespace HexFileDiffComparer
             InitializeComponent();
             MainFileListView.FullRowSelect = true;
             SecondaryFileListView.FullRowSelect = true;
+            if (!Directory.Exists("Temp"))
+                Directory.CreateDirectory("Temp");
             if (File.Exists("Temp/TempManifest.csv"))
                 importManifest("Temp/TempManifest.csv");
             else
