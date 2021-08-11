@@ -29,8 +29,8 @@ namespace HexFileDiffComparer
             }
         }
 
-        byte[] leftSideHexArray = new byte[65536];
-        byte[] rightSideHexArray = new byte[65536];
+        byte[] leftSideHexArray = new byte[100000];
+        byte[] rightSideHexArray = new byte[100000];
         string[] knownDataPoints = new string[8192];
 
 
@@ -108,7 +108,7 @@ namespace HexFileDiffComparer
             {
                 File.Copy(openFileDialog.FileName, "Temp/LeftSideTemp.fla",true);
                 BinaryReader binaryReader = new BinaryReader(File.Open("Temp/LeftSideTemp.fla", FileMode.Open));
-                leftSideHexArray = binaryReader.ReadBytes(65536);
+                leftSideHexArray = binaryReader.ReadBytes(99999);
                 binaryReader.Close();
                 //renumber hex array
                 leftSideHexArray = renumberByteArray(leftSideHexArray);
@@ -118,6 +118,7 @@ namespace HexFileDiffComparer
                 //error catching
             }
 
+            MainFileGroupBox.Text = "Main File - " + DateTime.Now.ToString("HH-mm-ss");
             if (rightSideHexArray != null) updateListViews();
         }
 
@@ -128,7 +129,7 @@ namespace HexFileDiffComparer
             {
                 File.Copy(openFileDialog.FileName, "Temp/RightSideTemp.fla",true);
                 BinaryReader binaryReader = new BinaryReader(File.Open("Temp/RightSideTemp.fla", FileMode.Open));
-                rightSideHexArray = binaryReader.ReadBytes(65536);
+                rightSideHexArray = binaryReader.ReadBytes(99999);
                 binaryReader.Close();
                 //renumber hex array
                 rightSideHexArray = renumberByteArray(rightSideHexArray);
@@ -138,6 +139,7 @@ namespace HexFileDiffComparer
                 //error catching
             }
 
+            SecondaryFileGroupBox.Text = "Secondary File - " + DateTime.Now.ToString("HH-mm-ss"); 
             if (leftSideHexArray != null) updateListViews();
         }
 
@@ -146,7 +148,18 @@ namespace HexFileDiffComparer
         {
             MainFileListView.Items.Clear();
             SecondaryFileListView.Items.Clear();
-            for (int i=0;i<leftSideHexArray.Length;i++)
+            
+            for (int i=0;i<0x2000;i++)
+            {
+                if (leftSideHexArray[i] != rightSideHexArray[i] && knownDataPoints[i % 8192] == null)
+                {
+                    MainFileListView.Items.Add(new ListViewItem(new string[] { i.ToString("X4"), leftSideHexArray[i].ToString("X2"), Convert.ToString(leftSideHexArray[i], 2).PadLeft(8, '0'), leftSideHexArray[i].ToString() }));
+                    SecondaryFileListView.Items.Add(new ListViewItem(new string[] { i.ToString("X4"), rightSideHexArray[i].ToString("X2"), Convert.ToString(rightSideHexArray[i], 2).PadLeft(8, '0'), rightSideHexArray[i].ToString() }));
+                }
+            }
+            
+            
+            for (int i = 0x9000; i < 0xA000; i++)
             {
                 if (leftSideHexArray[i] != rightSideHexArray[i] && knownDataPoints[i % 8192] == null)
                 {
@@ -156,11 +169,36 @@ namespace HexFileDiffComparer
             }
         }
 
+        private int calculateChecksum()
+        {
+            int checkSum = 0;
+            //start with sum of all registers
+            for (int i = 0; i < 0x100A; i++)
+            {
+                checkSum += leftSideHexArray[i];
+            }
+
+            //divide by two
+            //TO-DO we should really be looking at a chunk of 8192 registers at a time and copying things. will save a lot of PITA
+            //checkSum = checkSum / 2;
+            
+            return checkSum;
+        }
+
         private void saveLeftSideFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             saveFileDialog.ShowDialog();
+            //File.Delete(saveFileDialog.FileName);
             BinaryWriter binaryWriter = new BinaryWriter(File.Open(saveFileDialog.FileName, FileMode.OpenOrCreate));
-            binaryWriter.Write(renumberByteArray(leftSideHexArray));
+            byte[] saveFileArray = leftSideHexArray;
+            int checksum = calculateChecksum();
+            saveFileArray[0x100B] = Convert.ToByte(checksum % 256);
+            saveFileArray[0x300B] = Convert.ToByte(checksum % 256);
+            saveFileArray[0x100A] = Convert.ToByte((checksum - (checksum%256) )/256);
+            saveFileArray[0x300A] = Convert.ToByte((checksum - (checksum % 256)) / 256);
+
+            saveFileArray = renumberByteArray(saveFileArray);
+            binaryWriter.Write(saveFileArray);
             binaryWriter.Close();
         }
 
@@ -216,7 +254,7 @@ namespace HexFileDiffComparer
 
         private byte[] renumberByteArray(byte[] byteArray)
         {
-            byte[] renumberedArray = new byte[65536];
+            byte[] renumberedArray = new byte[byteArray.Length];
             for (int i=0; i<byteArray.Length/4; i++)
             {
                 renumberedArray[4 * i] = byteArray[(4 * i) + 3];
@@ -259,6 +297,11 @@ namespace HexFileDiffComparer
         {
             saveFileDialog.ShowDialog();
             exportManifest(saveFileDialog.FileName);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            calculateChecksum();
         }
     }
 }

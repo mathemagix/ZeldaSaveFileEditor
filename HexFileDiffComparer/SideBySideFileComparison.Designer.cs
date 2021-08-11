@@ -47,6 +47,11 @@ namespace HexFileDiffComparer
             this.loadRightSideFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadRightSideFileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.knownDataPointsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manifestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainFileGroupBox = new System.Windows.Forms.GroupBox();
             this.AddressEntry = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,11 +63,6 @@ namespace HexFileDiffComparer
             this.WriteValueButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.knownDataPointsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manifestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.MainFileGroupBox.SuspendLayout();
             this.SecondaryFileGroupBox.SuspendLayout();
@@ -195,6 +195,44 @@ namespace HexFileDiffComparer
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.knownDataPointsToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // knownDataPointsToolStripMenuItem
+            // 
+            this.knownDataPointsToolStripMenuItem.Name = "knownDataPointsToolStripMenuItem";
+            this.knownDataPointsToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.knownDataPointsToolStripMenuItem.Text = "Known Data Points";
+            this.knownDataPointsToolStripMenuItem.Click += new System.EventHandler(this.knownDataPointsToolStripMenuItem_Click);
+            // 
+            // manifestToolStripMenuItem
+            // 
+            this.manifestToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.importToolStripMenuItem,
+            this.exportToolStripMenuItem});
+            this.manifestToolStripMenuItem.Name = "manifestToolStripMenuItem";
+            this.manifestToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.manifestToolStripMenuItem.Text = "Manifest";
+            // 
+            // importToolStripMenuItem
+            // 
+            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.importToolStripMenuItem.Text = "Import";
+            this.importToolStripMenuItem.Click += new System.EventHandler(this.importToolStripMenuItem_Click);
+            // 
+            // exportToolStripMenuItem
+            // 
+            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.exportToolStripMenuItem.Text = "Export";
+            this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
+            // 
             // MainFileGroupBox
             // 
             this.MainFileGroupBox.Controls.Add(this.MainFileListView);
@@ -285,49 +323,11 @@ namespace HexFileDiffComparer
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
-            // viewToolStripMenuItem
-            // 
-            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.knownDataPointsToolStripMenuItem});
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.viewToolStripMenuItem.Text = "View";
-            // 
-            // knownDataPointsToolStripMenuItem
-            // 
-            this.knownDataPointsToolStripMenuItem.Name = "knownDataPointsToolStripMenuItem";
-            this.knownDataPointsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.knownDataPointsToolStripMenuItem.Text = "Known Data Points";
-            this.knownDataPointsToolStripMenuItem.Click += new System.EventHandler(this.knownDataPointsToolStripMenuItem_Click);
-            // 
-            // manifestToolStripMenuItem
-            // 
-            this.manifestToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.importToolStripMenuItem,
-            this.exportToolStripMenuItem});
-            this.manifestToolStripMenuItem.Name = "manifestToolStripMenuItem";
-            this.manifestToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.manifestToolStripMenuItem.Text = "Manifest";
-            // 
-            // importToolStripMenuItem
-            // 
-            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.importToolStripMenuItem.Text = "Import";
-            this.importToolStripMenuItem.Click += new System.EventHandler(this.importToolStripMenuItem_Click);
-            // 
-            // exportToolStripMenuItem
-            // 
-            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exportToolStripMenuItem.Text = "Export";
-            this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
-            // 
             // SideBySideFileComparison
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 450);
+            this.ClientSize = new System.Drawing.Size(795, 453);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.WriteValueButton);
             this.Controls.Add(this.label2);

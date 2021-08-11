@@ -29,7 +29,6 @@ namespace HexFileDiffComparer
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.MainFileListView = new System.Windows.Forms.ListView();
             this.Address = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Value = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -48,10 +47,11 @@ namespace HexFileDiffComparer
             this.Address,
             this.Value,
             this.Decription});
+            this.MainFileListView.Dock = System.Windows.Forms.DockStyle.Top;
             this.MainFileListView.HideSelection = false;
-            this.MainFileListView.Location = new System.Drawing.Point(12, 12);
+            this.MainFileListView.Location = new System.Drawing.Point(0, 0);
             this.MainFileListView.Name = "MainFileListView";
-            this.MainFileListView.Size = new System.Drawing.Size(374, 367);
+            this.MainFileListView.Size = new System.Drawing.Size(398, 367);
             this.MainFileListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.MainFileListView.TabIndex = 1;
             this.MainFileListView.UseCompatibleStateImageBehavior = false;

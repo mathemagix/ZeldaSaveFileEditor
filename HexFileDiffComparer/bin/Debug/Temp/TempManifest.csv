@@ -1,0 +1,44 @@
+0003,Scene Entry Flag (Inicates where link entered the scene from)
+0012,Large Increments of time (0 midnight, 8 noon)
+0013,Small Increments of time
+0019,Day/Night indicator (0=day 1=night)
+0027,Day (1-3)
+0031,Day (1-3)
+0032,Current Transformation (4=hylian, 3=deku)
+0043,Number of times saved
+0044,File Name Character 1
+0045,File Name Character 2
+0046,File Name Character 3
+0047,File Name Character 4
+0048,File Name Character 5
+0049,File Name Character 6
+0050,File Name Character 7
+0051,File Name Character 8
+0055,Health (4 per quarter heart without health upgrade)
+0057,Magic Meter (max 48 with small meter)
+0059,Rupees in Link's Inventory
+0071,Flags for Owl Statues Unlocked(one bit per statue)
+0077,Item in left C button (encoding unknown)
+0078,Item in bottom C button (encoding unknown)
+0079,Item in right C button (encoding unknown)
+0093,Item in left C button (encoding unknown)
+0094,Item in bottom C button (encoding unknown)
+0095,Item in right C button (encoding unknown)
+0168,Number of Deku Sticks in inventory
+0169,Number of Deku Nuts in inventory
+3759,Bank Rupees (small number)
+3862,Bit 4 - flag that the Deku transformation cutscene has played
+4076,Day 1 Lottery Number 1
+4077,Day 1 Lottery Number 2
+4078,Day 1 Lottery Number 3
+4079,Day 2 Lottery Number 1
+4080,Day 2 Lottery Number 2
+4081,Day 2 Lottery Number 3
+4082,Day 3 Lottery Number 1
+4083,Day 3 Lottery Number 2
+4084,Day 3 Lottery Number 3
+4091,Bomber's Password Digit 1
+4092,Bomber's Password Digit 2
+4093,Bomber's Password Digit 3
+4094,Bomber's Password Digit 4
+4095,Bomber's Password Digit 5
