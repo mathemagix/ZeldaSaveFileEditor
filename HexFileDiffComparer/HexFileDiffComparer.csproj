@@ -53,6 +53,12 @@
     <Compile Include="DataPointOverviewForm.Designer.cs">
       <DependentUpon>DataPointOverviewForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FileSelectorDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileSelectorDialogue.Designer.cs">
+      <DependentUpon>FileSelectorDialogue.cs</DependentUpon>
+    </Compile>
     <Compile Include="SideBySideFileComparison.cs">
       <SubType>Form</SubType>
     </Compile>

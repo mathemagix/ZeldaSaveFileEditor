@@ -1,0 +1,10 @@
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\MMSaveFileEditor\bin\Debug\MMSaveFileEditor.exe.config
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\MMSaveFileEditor\bin\Debug\MMSaveFileEditor.exe
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\MMSaveFileEditor\bin\Debug\MMSaveFileEditor.pdb
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\MMSaveFileEditor\obj\Debug\N64SaveFileEditor.csprojAssemblyReference.cache
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\MMSaveFileEditor\obj\Debug\N64SaveFileEditor.Form1.resources
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\MMSaveFileEditor\obj\Debug\MMSaveFileEditor.Properties.Resources.resources
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\MMSaveFileEditor\obj\Debug\N64SaveFileEditor.csproj.GenerateResource.cache
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\MMSaveFileEditor\obj\Debug\N64SaveFileEditor.csproj.CoreCompileInputs.cache
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\MMSaveFileEditor\obj\Debug\MMSaveFileEditor.exe
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\MMSaveFileEditor\obj\Debug\MMSaveFileEditor.pdb

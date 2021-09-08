@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 
 
-namespace MMSaveFileEditor
+namespace N64SaveFileEditor
 {
     //Zelda has their own weird ascii standard
     public partial class Form1 : Form
@@ -20,31 +20,6 @@ namespace MMSaveFileEditor
         public Form1()
         {
             InitializeComponent();
-        }
-
-        byte[] hexArray = new byte[65536];
-        private void button1_Click(object sender, EventArgs e)
-        {
-            openFileDialog1.ShowDialog();
-            BinaryReader binaryReader = new BinaryReader(File.Open(openFileDialog1.FileName,FileMode.Open));
-            hexArray = renumberByteArray(binaryReader.ReadBytes(65536));
-            /*
-            for (int i = 0x2FE0; i<0x3000; i++)
-            {
-                textBox1.Text += i.ToString("X4") + " : " + hexArray[i].ToString("X2") + Environment.NewLine;
-            }
-            */
-
-            textBox1.Text += "File Name: " + getFileName() + Environment.NewLine;
-            textBox1.Text += "Bombers Password: " + getBombersPassword() + Environment.NewLine;
-
-            checkHeartPieces();
-            /*
-            for (int i=0; i<hexArray.Length; i++)
-            {
-                if (hexArray[i] != 0) textBox1.Text += i.ToString("X4") + " - " + hexArray[i].ToString("X4") + Environment.NewLine;
-            }
-            */
         }
 
         private byte[] renumberByteArray(byte[] byteArray)
@@ -59,29 +34,7 @@ namespace MMSaveFileEditor
             }
             return renumberedArray;
         }
-
-        private string getZASCIILetter(int register)
-        {
-            //0-9 are just 0-9
-            if (hexArray[register] < 10) return hexArray[register].ToString();
-   
-            //10-35 are A-Z (ASCII codes 65-90)
-            if (hexArray[register] < 36) return (Convert.ToChar(hexArray[register] + 55)).ToString();
-
-            //if we're out of range, just leave an empty space
-            return " ";
-        }
-
-        private string getFileName()
-        {
-            return getZASCIILetter(0x202F) + getZASCIILetter(0x202E) + getZASCIILetter(0x202D) + getZASCIILetter(0x202C) + getZASCIILetter(0x2033) + getZASCIILetter(0x2032) + getZASCIILetter(0x2031) + getZASCIILetter(0x2030);
-
-        }
-
-        private string getBombersPassword()
-        {
-            return hexArray[0x2FF8].ToString() + hexArray[0x2FFF].ToString() + hexArray[0x2FFE].ToString() + hexArray[0x2FFD].ToString() + hexArray[0x2FFC].ToString();
-        }
+        /*
         private void checkHeartPieces()
         {
             //List courtesy of https://github.com/cxd4/zs-flash/blob/master/zs_data.c
@@ -154,6 +107,6 @@ namespace MMSaveFileEditor
             if (hexArray[0x2878] == 0) textBox1.Text += "Goron Moon Dungeon Piece" + Environment.NewLine;
             if (hexArray[0x2B6C] == 0) textBox1.Text += "Zora Moon Dungeon Piece" + Environment.NewLine;
             if (hexArray[0x26F0] == 0) textBox1.Text += "Hylian Moon Dungeon Piece" + Environment.NewLine;
-        }
+        }*/
     }
 }

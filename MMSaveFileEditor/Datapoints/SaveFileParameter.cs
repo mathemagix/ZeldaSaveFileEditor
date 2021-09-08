@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MMSaveFileEditor
+namespace N64SaveFileEditor
 {
     class SaveFileParameter
     {
@@ -21,7 +21,7 @@ namespace MMSaveFileEditor
                 case DataType.TwoByteInteger:
                     this.intValue = (int)value;
                     break;
-                case DataType.ZASCII:
+                case DataType.ASCII:
                     this.stringValue = (string)value;
                     break;
             }
@@ -31,7 +31,7 @@ namespace MMSaveFileEditor
             OneByteInteger = 0,
             TwoByteInteger = 1,
             Bit = 2,
-            ZASCII = 3
+            ASCII = 3
         }
 
         private string name = "";

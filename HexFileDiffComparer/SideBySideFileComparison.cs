@@ -148,6 +148,7 @@ namespace HexFileDiffComparer
         {
             MainFileListView.Items.Clear();
             SecondaryFileListView.Items.Clear();
+
             
             for (int i=0;i<0x2000;i++)
             {
@@ -159,7 +160,7 @@ namespace HexFileDiffComparer
             }
             
             
-            for (int i = 0x9000; i < 0xA000; i++)
+            for (int i = 0x8000; i < 0xA000; i++)
             {
                 if (leftSideHexArray[i] != rightSideHexArray[i] && knownDataPoints[i % 8192] == null)
                 {
@@ -167,6 +168,7 @@ namespace HexFileDiffComparer
                     SecondaryFileListView.Items.Add(new ListViewItem(new string[] { i.ToString("X4"), rightSideHexArray[i].ToString("X2"), Convert.ToString(rightSideHexArray[i], 2).PadLeft(8, '0'), rightSideHexArray[i].ToString() }));
                 }
             }
+
         }
 
         private int calculateChecksum()
