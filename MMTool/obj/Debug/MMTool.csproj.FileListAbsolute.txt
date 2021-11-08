@@ -1,0 +1,12 @@
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\MMTool\bin\Debug\MMTool.exe.config
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\MMTool\bin\Debug\MMTool.exe
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\MMTool\bin\Debug\MMTool.pdb
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\MMTool\obj\Debug\MMTool.EntryForm.resources
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\MMTool\obj\Debug\MMTool.FileEditorForm.resources
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\MMTool\obj\Debug\MMTool.FileSelectorForm.resources
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\MMTool\obj\Debug\MMTool.Properties.Resources.resources
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\MMTool\obj\Debug\MMTool.csproj.GenerateResource.cache
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\MMTool\obj\Debug\MMTool.csproj.CoreCompileInputs.cache
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\MMTool\obj\Debug\MMTool.exe
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\MMTool\obj\Debug\MMTool.pdb
+C:\Users\MAIN\source\repos\ZeldaSaveFileEditor\MMTool\obj\Debug\MMTool.csprojAssemblyReference.cache

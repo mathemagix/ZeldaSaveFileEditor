@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1463BDE4-2945-4E58-8790-804FEE7F0F57}</ProjectGuid>
+    <ProjectGuid>{9D07C149-D0C3-450E-88EA-3334F92C6E3D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>HexFileDiffComparer</RootNamespace>
-    <AssemblyName>HexFileDiffComparer</AssemblyName>
+    <RootNamespace>MMTool</RootNamespace>
+    <AssemblyName>MMTool</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -35,7 +35,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,38 +46,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataPointOverviewForm.cs">
+    <Compile Include="FileComparisonForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataPointOverviewForm.Designer.cs">
-      <DependentUpon>DataPointOverviewForm.cs</DependentUpon>
+    <Compile Include="FileComparisonForm.Designer.cs">
+      <DependentUpon>FileComparisonForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FileSelectorDialogue.cs">
+    <Compile Include="FileEditorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FileSelectorDialogue.Designer.cs">
-      <DependentUpon>FileSelectorDialogue.cs</DependentUpon>
+    <Compile Include="FileEditorForm.Designer.cs">
+      <DependentUpon>FileEditorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="FileSelectorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FileSelectorForm.Designer.cs">
+      <DependentUpon>FileSelectorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SideBySideFileComparison.cs">
+    <Compile Include="EntryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SideBySideFileComparison.Designer.cs">
-      <DependentUpon>SideBySideFileComparison.cs</DependentUpon>
+    <Compile Include="EntryForm.Designer.cs">
+      <DependentUpon>EntryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="DataPointOverviewForm.resx">
-      <DependentUpon>DataPointOverviewForm.cs</DependentUpon>
+    <EmbeddedResource Include="EntryForm.resx">
+      <DependentUpon>EntryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
-    <EmbeddedResource Include="SideBySideFileComparison.resx">
-      <DependentUpon>SideBySideFileComparison.cs</DependentUpon>
+    <EmbeddedResource Include="FileEditorForm.resx">
+      <DependentUpon>FileEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileSelectorForm.resx">
+      <DependentUpon>FileSelectorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
